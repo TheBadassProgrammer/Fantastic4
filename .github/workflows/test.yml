@@ -1,0 +1,19 @@
+name: Test HTML Files
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check HTML files exist
+        run: |
+          test -f form.html
+          test -f studentdata.html
+          test -f access.html
+          test -f new.html
